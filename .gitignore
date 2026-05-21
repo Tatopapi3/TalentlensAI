@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/predictions.db
+data/match_data.csv
+data/trend_data.csv
