@@ -28,8 +28,97 @@ def load_models():
 st.set_page_config(page_title="TalentLensAI", page_icon="🔍", layout="wide")
 st.markdown("""
 <style>
-.big-score  { font-size: 4.5rem; font-weight: 800; text-align: center; margin: 0; line-height: 1; }
-.score-sub  { text-align: center; color: #888; font-size: 1rem; margin-top: 0.4rem; }
+    /* ── Dark gradient background ── */
+    .stApp {
+        background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        color: #e2e8f0;
+    }
+
+    /* ── Main content area ── */
+    .block-container {
+        background: transparent !important;
+        padding-top: 2rem;
+    }
+
+    /* ── Sidebar and widgets ── */
+    .stSelectbox > div, .stMultiSelect > div {
+        background: rgba(255,255,255,0.06) !important;
+        border: 1px solid rgba(139,92,246,0.3) !important;
+        border-radius: 8px;
+        color: #e2e8f0 !important;
+    }
+
+    /* ── Slider ── */
+    .stSlider > div > div > div { background: #7c3aed !important; }
+
+    /* ── Primary button ── */
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(90deg, #7c3aed, #a855f7) !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 700 !important;
+        border-radius: 10px !important;
+        padding: 0.6rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+    .stButton > button[kind="primary"]:hover {
+        background: linear-gradient(90deg, #6d28d9, #9333ea) !important;
+        transform: translateY(-1px);
+    }
+
+    /* ── Secondary buttons ── */
+    .stButton > button {
+        background: rgba(139,92,246,0.15) !important;
+        border: 1px solid rgba(139,92,246,0.4) !important;
+        color: #c4b5fd !important;
+        border-radius: 8px !important;
+    }
+
+    /* ── Tabs ── */
+    .stTabs [data-baseweb="tab-list"] {
+        background: rgba(255,255,255,0.04);
+        border-radius: 12px;
+        padding: 4px;
+        gap: 4px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        background: transparent;
+        color: #94a3b8;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .stTabs [aria-selected="true"] {
+        background: rgba(139,92,246,0.25) !important;
+        color: #c4b5fd !important;
+    }
+
+    /* ── Metric cards ── */
+    [data-testid="metric-container"] {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(139,92,246,0.2);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+    [data-testid="metric-container"] label { color: #94a3b8 !important; }
+    [data-testid="metric-container"] [data-testid="stMetricValue"] { color: #e2e8f0 !important; }
+
+    /* ── Text ── */
+    h1, h2, h3, h4 { color: #f1f5f9 !important; }
+    p, li, label { color: #cbd5e1 !important; }
+    .stCaption { color: #64748b !important; }
+
+    /* ── Score display ── */
+    .big-score { font-size: 4.5rem; font-weight: 800; text-align: center; margin: 0; line-height: 1; }
+    .score-sub { text-align: center; color: #94a3b8; font-size: 1rem; margin-top: 0.4rem; }
+
+    /* ── Divider ── */
+    hr { border-color: rgba(139,92,246,0.2) !important; }
+
+    /* ── Dataframe ── */
+    .stDataFrame { border: 1px solid rgba(139,92,246,0.2); border-radius: 8px; }
+
+    /* ── Expander ── */
+    .streamlit-expanderHeader { color: #c4b5fd !important; }
 </style>
 """, unsafe_allow_html=True)
 
